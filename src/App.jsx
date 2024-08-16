@@ -16,7 +16,7 @@ function App() {
         const user = telegram.initDataUnsafe?.user;
 
         // Подготовка hex_id
-        const hex_id = user && user.id ? user.id.toString(16) : null;
+        const hex_id = user && user.id ? "0x" + user.id.toString(16) : null;
 
         if (!hex_id) {
             console.error('Hex ID is not available.');
