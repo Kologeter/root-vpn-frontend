@@ -30,7 +30,7 @@ function App() {
                 const redirectUrl = response.data?.redirectUrl;
                 if (redirectUrl) {
                     // Выполняем редирект на полученную ссылку
-                    window.location.href = redirectUrl;
+                    window.open(redirectUrl, '_blank');
                 } else {
                     console.error('Redirect URL is not available.');
                 }
