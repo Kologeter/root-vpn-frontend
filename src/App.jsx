@@ -25,7 +25,14 @@ function App() {
 
         const url_get = `${url}${hex_id}`;
 
-        telegram.openLink(url_get)
+        console.log('Платформа: ',telegram.platform);
+
+        axios.get(url_get).then((response) => {
+            console.log('Ответ от аксиоса', response);
+            telegram.openLink(response)
+        });
+
+        // telegram.openLink(url_get);
 
         // axios.get(url_get)
         //     .then((response) => {
