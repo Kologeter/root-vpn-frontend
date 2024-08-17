@@ -10,7 +10,7 @@ function App() {
         telegram.ready();
     }, []);
 
-    const getLinkRedirect = (url: string) => {
+    const getLinkRedirect = (url) => {
         const telegram = window.Telegram.WebApp;
 
         const user = telegram.initDataUnsafe?.user;
