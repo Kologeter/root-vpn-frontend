@@ -27,28 +27,28 @@ function App() {
 
         console.log('Платформа: ',telegram.platform);
 
-        axios.get(url_get).then((response) => {
-            console.log('Ответ от аксиоса', response);
-            telegram.openLink(response)
-        });
+        // axios.get(url_get).then((response) => {
+        //     console.log('Ответ от аксиоса', response);
+        //     telegram.openLink(response)
+        // });
 
         // telegram.openLink(url_get);
 
-        // axios.get(url_get)
-        //     .then((response) => {
-        //         const redirectUrl = response.data?.redirectUrl;
-        //         console.log('redirectUrl', redirectUrl);
-        //         if (redirectUrl) {
-        //             // Выполняем редирект на полученную ссылку
-        //             telegram.openLink(redirectUrl)
-        //             // window.open(redirectUrl, '_blank');
-        //         } else {
-        //             console.error('Redirect URL is not available.');
-        //         }
-        //     })
-        //     .catch((error) => {
-        //         console.error('Error:', error);
-        //     });
+        axios.get(url_get)
+            .then((response) => {
+                const redirectUrl = response.data?.redirectUrl;
+                console.log('redirectUrl', redirectUrl);
+                if (redirectUrl) {
+                    // Выполняем редирект на полученную ссылку
+                    telegram.openLink(redirectUrl)
+                    // window.open(redirectUrl, '_blank');
+                } else {
+                    console.error('Redirect URL is not available.');
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
     };
 
     const sendUserData = () => {
