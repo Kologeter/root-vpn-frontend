@@ -31,7 +31,8 @@ function App() {
                 console.log('redirectUrl', redirectUrl);
                 if (redirectUrl) {
                     // Выполняем редирект на полученную ссылку
-                    window.open(redirectUrl, '_blank');
+                    telegram.openLink(redirectUrl)
+                    // window.open(redirectUrl, '_blank');
                 } else {
                     console.error('Redirect URL is not available.');
                 }
