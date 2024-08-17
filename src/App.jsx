@@ -28,6 +28,7 @@ function App() {
         axios.get(url_get)
             .then((response) => {
                 const redirectUrl = response.data?.redirectUrl;
+                console.log('redirectUrl', redirectUrl);
                 if (redirectUrl) {
                     // Выполняем редирект на полученную ссылку
                     window.open(redirectUrl, '_blank');
