@@ -20,7 +20,7 @@ function App() {
             getLinkRedirect('https://test.root-vpn.ru/connect/run');
         });
 
-        // telegram.ready();
+        tg.ready();
     }, []);
 
     const getLinkRedirect = (url) => {
