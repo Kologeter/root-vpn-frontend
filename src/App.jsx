@@ -6,8 +6,21 @@ function App() {
 
     useEffect(() => {
         // Инициализация Telegram WebApp
-        const telegram = window.Telegram.WebApp;
-        telegram.ready();
+        // const telegram = window.Telegram.WebApp;
+
+        const tg = window.Telegram.WebApp;
+
+        tg.MainButton.text = "Подключиться";
+        tg.MainButton.setText("Подключиться");
+        tg.MainButton.show();
+
+        tg.MainButton.onClick(() => {
+            // Добавьте логику подключения VPN здесь
+            console.log("Подключение к VPN");
+            getLinkRedirect('https://test.root-vpn.ru/connect/run');
+        });
+
+        // telegram.ready();
     }, []);
 
     const getLinkRedirect = (url) => {
