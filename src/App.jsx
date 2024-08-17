@@ -65,12 +65,12 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <h1>Telegram WebApp</h1>
+                <h1>root vpn</h1>
                 <button onClick={sendUserData}>
                     Send User Data
                 </button>
                 <button onClick={() => getLinkRedirect('https://test.root-vpn.ru/connect/run')}>
-                    Redirect Link
+                    Подключиться автоматически
                 </button>
             </header>
         </div>
