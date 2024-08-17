@@ -58,7 +58,7 @@ function App() {
                 <button onClick={sendUserData}>
                     Send User Data
                 </button>
-                <button onClick={() => getLinkRedirect('https://test.nail-bot.ru/connect/run')}>
+                <button onClick={() => getLinkRedirect('https://test.root-vpn.ru/connect/run')}>
                     Redirect Link
                 </button>
             </header>
