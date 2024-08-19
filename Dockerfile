@@ -13,7 +13,7 @@ RUN npm install
 # Копируем остальные файлы проекта
 COPY . .
 
-#RUN npm uninstall react-scripts && npm install react-scripts
+RUN npm uninstall react-scripts && npm install react-scripts
 
 #RUN #ls -la node_modules/.bin
 
