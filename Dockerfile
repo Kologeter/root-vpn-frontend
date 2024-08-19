@@ -5,7 +5,7 @@ ENTRYPOINT ["top", "-b"]
 # frontend/Dockerfile
 
 # Используем официальный образ Node.js
-FROM node:18-alpine
+FROM node:18-alpine AS build
 
 # Устанавливаем рабочую директорию внутри контейнера
 WORKDIR /app
@@ -26,7 +26,7 @@ RUN npm run build
 FROM nginx:alpine
 
 # Копируем сгенерированные статические файлы в директорию nginx
-COPY --from=publish /app .
+COPY --from=build /app .
 
 # Открываем порт 80 для доступа к приложению
 EXPOSE 80
