@@ -26,7 +26,7 @@ RUN npm run build
 FROM nginx:alpine
 
 # Копируем сгенерированные статические файлы в директорию nginx
-COPY --from=0 /app/build /usr/share/nginx/html
+COPY --from=build /app/build /usr/share/nginx/html
 
 # Открываем порт 80 для доступа к приложению
 EXPOSE 80
