@@ -74,6 +74,13 @@ function App() {
             telegram.sendData("User data is not available.");
         }
     };
+    //
+    // const downloadApp = () => {
+    //     const telegram = window.Telegram.WebApp;
+    //     if (telegram.platform) {
+    //
+    //     }
+    // }
 
     return (
         <div className="App">
@@ -86,6 +93,9 @@ function App() {
                     Подключиться автоматически
                 </button>
             </header>
+            {/*<main className="App">*/}
+            {/*    <button onClick={() => }></button>*/}
+            {/*</main>*/}
         </div>
     );
 }
