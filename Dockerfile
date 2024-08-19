@@ -30,6 +30,8 @@ FROM nginx:alpine
 # Копируем сгенерированные статические файлы в директорию nginx
 COPY --from=build /dist /usr/share/nginx/html
 
+COPY --from=build nginx.conf /etc/nginx/conf.d/default.conf
+
 # Открываем порт 80 для доступа к приложению
 EXPOSE 80
 
