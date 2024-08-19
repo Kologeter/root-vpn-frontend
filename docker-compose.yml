@@ -1,14 +1,12 @@
-version: '3.8'
-
+version: '3'
 services:
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    build: .
     ports:
-      - "80:80"
-    environment:
-      - NODE_ENV=production
-    volumes:
-      - /app/node_modules
-      - ./frontend:/app
+      - "3000:80"
+    networks:
+      - root-vpn-network
+
+networks:
+  root-vpn-network:
+    driver: bridge
