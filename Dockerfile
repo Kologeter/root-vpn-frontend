@@ -13,6 +13,8 @@ RUN npm install
 # Копируем остальные файлы проекта
 COPY . .
 
+RUN ls -la node_modules/.bin
+
 # Собираем проект
 RUN npm run build
 
