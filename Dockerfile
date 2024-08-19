@@ -8,7 +8,7 @@ ENTRYPOINT ["top", "-b"]
 FROM node:18-alpine
 
 # Устанавливаем рабочую директорию внутри контейнера
-WORKDIR /app
+WORKDIR .
 
 # Копируем package.json и package-lock.json
 COPY package*.json ./
