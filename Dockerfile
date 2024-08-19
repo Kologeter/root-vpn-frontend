@@ -13,9 +13,9 @@ RUN npm install
 # Копируем остальные файлы проекта
 COPY . .
 
-RUN npm uninstall react-scripts && npm install react-scripts
+#RUN npm uninstall react-scripts && npm install react-scripts
 
-RUN #ls -la node_modules/.bin
+#RUN #ls -la node_modules/.bin
 
 # Собираем проект
 RUN npm run build
@@ -24,9 +24,9 @@ RUN npm run build
 FROM nginx:alpine
 
 # Копируем сгенерированные статические файлы в директорию nginx
-COPY --from=build /app /usr/share/nginx/html
+COPY --from=build . /usr/share/nginx/html
 
-COPY --from=build /app/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build .nginx.conf /etc/nginx/conf.d/default.conf
 
 # Открываем порт 80 для доступа к приложению
 EXPOSE 80
