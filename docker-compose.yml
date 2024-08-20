@@ -1,12 +1,15 @@
-version: '3'
-services:
-  frontend:
-    build: .
-    ports:
-      - "3000:3000"
-    networks:
-      - root-vpn-network
-
 networks:
-  root-vpn-network:
-    driver: bridge
+  dev:
+
+services:
+#  backend:
+#    build:
+#      context: ./backend
+#    networks:
+#      - dev
+
+  frontend:
+    build:
+      context: ./frontend
+    networks:
+      - dev
