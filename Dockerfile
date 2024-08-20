@@ -24,12 +24,11 @@ RUN npm run build
 FROM nginx:alpine
 
 # Копируем сгенерированные статические файлы в директорию nginx
-COPY --from=build . /usr/share/nginx/html
+COPY --from=build app /usr/share/nginx/html
 
-COPY --from=build .nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build app/nginx.conf /etc/nginx/conf.d/default.conf
 
-# Открываем порт 80 для доступа к приложению
-EXPOSE 80
+EXPOSE 3000
 
 # Запуск nginx
 CMD ["nginx", "-g", "daemon off;"]
