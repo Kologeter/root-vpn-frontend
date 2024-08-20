@@ -1,5 +1,5 @@
-networks:
-  dev:
+#networks:
+#  dev:
 
 services:
 #  backend:
@@ -12,4 +12,4 @@ services:
     build:
       context: ./frontend
     networks:
-      - dev
+      - anastasi_nails_default
